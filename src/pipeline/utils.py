@@ -3,10 +3,9 @@ import sys
 import dill
 import numpy as np
 import pandas as pd
-import pickle
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
-from src.exception import CustomException
+from exception import CustomException
 
 
 def save_path(file_path, obj):
