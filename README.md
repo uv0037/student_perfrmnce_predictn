@@ -12,26 +12,6 @@ The pipeline takes raw student data, processes it, trains a predictive model, an
 3. **Model Training**: Train and evaluate the prediction model.
 4. **Prediction**: Serve predictions via a Flask web app.
 
-
-## Data Flow in the Pipeline
-
-Below is a flowchart and step-by-step explanation showing how data moves through the pipeline:
-
-```mermaid
-graph TD
-    A[Raw Data (stud.csv)] --> B[Data Ingestion]
-    B -->|train/test split| C[train.csv & test.csv]
-    C --> D[Data Transformation]
-    D -->|preprocessing + feature engineering| E[Preprocessed Train/Test Sets]
-    E --> F[Model Training]
-    F -->|model.pkl| G[Prediction Pipeline]
-    G --> H[Web Application]
-    H --> I[User Inputs]
-    I --> G
-    G --> J[Predicted Score]
-    J --> H
-```
-
 ### Step-by-Step Flow
 
 **1. Data Ingestion (`src/components/data_ingestion.py`):**
